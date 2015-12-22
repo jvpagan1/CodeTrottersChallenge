@@ -1,6 +1,6 @@
 def int_to_word(i1):
     result =""
-    i=i1
+    i=max(min(i1,999999999),0)
     d = {0:"",1:"one",2:"two",3:"three",4:"four",5:"five",6:"six",7:"seven",8:"eight",9:"nine",10:"ten",
     11:"eleven",12:"twelve",13:"thirteen",14:"forteen",15:"fifteen",16:"sixteen",17:"seventeen",18:"eighteen",19:"nineteen",
     20:"twenty",30:"thirty",40:"forty",50:"fifty",60:"sixty",70:"seventy",80:"eighty",90:"ninety",
@@ -50,5 +50,9 @@ def int_to_word(i1):
 
 #for s in xrange(1000000000):
 #    print int_to_word(s)
-print int_to_word(2334235)
+
+print int_to_word(4527),"four thousand five hundred twenty seven"
+print int_to_word(200017), "two hundred thousand seventeen"
+print int_to_word(784),"seven hundred eighty four"
+print int_to_word(1000215),"one million two hundred fifteen"
         
