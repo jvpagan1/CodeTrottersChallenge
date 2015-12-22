@@ -51,8 +51,8 @@ def int_to_word(i1):
 #for s in xrange(1000000000):
 #    print int_to_word(s)
 
-print int_to_word(4527),"four thousand five hundred twenty seven"
-print int_to_word(200017), "two hundred thousand seventeen"
-print int_to_word(784),"seven hundred eighty four"
-print int_to_word(1000215),"one million two hundred fifteen"
+print int_to_word(4527),"= four thousand five hundred twenty seven"
+print int_to_word(200017), "= two hundred thousand seventeen"
+print int_to_word(784),"= seven hundred eighty four"
+print int_to_word(1000215),"= one million two hundred fifteen"
         
