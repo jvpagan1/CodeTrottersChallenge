@@ -1,3 +1,6 @@
+#Write a function called int_to_word that takes as an input an integer parameter and returns the associated English word.
+#You can assume the function will never receive a number greater than 999,999,999.
+
 def int_to_word(i1):
     result =""
     i=max(min(i1,999999999),0)
@@ -51,6 +54,7 @@ def int_to_word(i1):
 #for s in xrange(1000000000):
 #    print int_to_word(s)
 
+# Tests against expected results.
 print int_to_word(4527),"= four thousand five hundred twenty seven"
 print int_to_word(200017), "= two hundred thousand seventeen"
 print int_to_word(784),"= seven hundred eighty four"
