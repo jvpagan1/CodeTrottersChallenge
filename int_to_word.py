@@ -14,11 +14,11 @@ def int_to_word(i1):
     for n in range(3):
         u = 10**(n*3) # (1, 1000, 1000000) used to divide integer to extract first, second and third number.
     
-        if i > u: #If number is less than u, end.
+        if i >= u: #If number is less than u, end.
             #Extract next 3 digit number and separate digits into hundreds, tens and ones.
-            number = i/u%1000 #extract next 3 digit number
-            hundreds = number/100
-            tens = number%100/10
+            number = int(i/u%1000) #extract next 3 digit number
+            hundreds = int(number/100)
+            tens = int(number%100/10)
             ones = number%10
 
             #Convert first two digits: tens and ones           
@@ -32,8 +32,7 @@ def int_to_word(i1):
                 result1 = d[tens*10]
             if tens > 1 and ones > 0:
                 result1 = d[tens*10] + " " + d[ones]
-
-            #Add third digit with word hundreds
+            #Add third digit with word "hundred"
             if hundreds >0:
                 if result1 == "":  #If first two digits are zeroes, result1 = hundreds, else add to first two digits
                     result1 = d[hundreds] + " " + d[100]
@@ -43,7 +42,10 @@ def int_to_word(i1):
                 result1 = result1 + " " + d[u]
             #If 3 digit number is not zero, add it to result (word) 
             if result1 != "":
-                result = result1 + " " + result
+                if result == "":
+                    result = result1
+                else:
+                    result = result1 + " " + result
         else:
             break
     if result !="":
@@ -51,12 +53,10 @@ def int_to_word(i1):
     else:
         return "zero"
 
-#for s in xrange(1000000000):
-#    print int_to_word(s)
 
-# Tests against expected results.
-print int_to_word(4527),"= four thousand five hundred twenty seven"
-print int_to_word(200017), "= two hundred thousand seventeen"
-print int_to_word(784),"= seven hundred eighty four"
-print int_to_word(1000215),"= one million two hundred fifteen"
-        
+
+#Tests against expected results.
+assert int_to_word(4527)== "four thousand five hundred twenty seven"
+assert int_to_word(200017), "= two hundred thousand seventeen"
+assert int_to_word(784),"= seven hundred eighty four"
+assert int_to_word(1000215),"= one million two hundred fifteen"
